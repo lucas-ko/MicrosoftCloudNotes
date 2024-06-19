@@ -1,7 +1,7 @@
 # MicrosoftCloudNotes
-Repository designed to document valuable and less known features available in Microsoft Cloud ecosystem.
+Repository dedicated to document valuable and less known features available in Microsoft Cloud ecosystem.
 
-**- Feat #1** - [Entra ID - tenant-wide application management policies]()<br><br><br>
+**- Feat #1** - [Entra ID - tenant-wide application management policies](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-AppManagementPolicies.md)<br><br><br>
 
 
 
