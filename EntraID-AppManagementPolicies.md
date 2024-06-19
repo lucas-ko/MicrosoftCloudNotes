@@ -9,7 +9,7 @@ Application authentication methods policy allows for enhanced governance, manage
 > ### Why proper governance over authentication methods for applications and service principals is important?
 You say you have very comprehensive, field-tested Conditional Access policies?<br> Multi-factor authentication and compliant devices mandated for everyone, phishing resistant factors required for critical privileged roles, legacy authentication blocked, user and risk level policies configured, authentication transfer and device code flow blocked for 99% of user base...<br>
 You got your entire authentication stack under control, right?<br>
-![image](https://github.com/lucas-ko/MSGraphQueries/assets/58331927/27448c6a-0e00-4cdb-b370-022c10145572)
+![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/eb396be5-1e69-49b0-aa62-30f8506bbcf0)
 
 Well, you probably did a very good job but there's an enhancement waiting.<br>
 **Conditional Access policies, regardless of how well thought out they are, in a tenant with Entra ID P1/P2 licensing without any add-ons:**
@@ -126,8 +126,9 @@ Disconnect-MgGraph
 >restrictForAppsCreatedAfterDateTime = $null
 >}
 >```
-> **Result?**<br> All additions of client secrets for all apps and service principals (Yes, you can add a credential to service principal too! Only through PowerShell, but still!), regardless of their creation timestamp (```restrictForAppsCreatedAfterDateTime = $null``` is key here) are blocked!
->![image](https://github.com/lucas-ko/MSGraphQueries/assets/58331927/43eb1880-aee9-484a-a92a-f06f4ebc5013)
+> **Result?**<br> All additions of client secrets for all applications and service principals, regardless of their creation timestamp (```restrictForAppsCreatedAfterDateTime = $null``` is key here) are blocked! (In case you wonder, you can add credentials to service principals too! Only through PowerShell, but still!)
+![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/249f9a88-be53-47a4-8641-7c93c17a4e70)
+
 
 
 > ### Configuration effects
@@ -136,21 +137,25 @@ Disconnect-MgGraph
 
 Addition of a client secret on application object:<br>
 Default Entra ID client secret restrictions are applied -
-![image](https://github.com/lucas-ko/MSGraphQueries/assets/58331927/262d99fc-b529-4fb7-be50-a791a447469e)
+![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/c87c78f8-89a9-4028-abd1-3642c20390b9)
+
 
 Addition of an asymmetric key on application object:<br>
 Restricions are not applied to asymmetric key credential -
-![image](https://github.com/lucas-ko/MSGraphQueries/assets/58331927/8cdafa38-3792-4deb-9b25-fd1399fa4a42)
+![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/6295bfc1-9991-4223-9469-b8343588d642)
+
 
 > **B. Tenant-wide application authentication methods policies are configured and enforced as per above configuration.**
 
 Addition of a client secret on application object:<br>
 Tenant app management policies are now enforced and restrict client secret lifetime to maximum 1 year -
-![image](https://github.com/lucas-ko/MSGraphQueries/assets/58331927/e071cdce-6f0a-46c9-9c77-2918db48fcd7)
+![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/f4b5218b-f02a-4a6c-a5b5-1a1f80451229)
+
 
 Addition of an asymmetric key on application object:<br>
 Tenant app management policies are now enforced and reject upload of certificates with lifetime exceeding 2 years -
-![image](https://github.com/lucas-ko/MSGraphQueries/assets/58331927/3c36470b-9e1b-40c6-8e0a-4e5d741b4ea9)
+![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/24b4e1a9-4fdd-4488-bce4-ad12add92ef0)
+
 
 >### FAQ:
 
