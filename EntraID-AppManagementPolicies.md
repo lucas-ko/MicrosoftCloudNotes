@@ -71,7 +71,7 @@ $params = @{
 		)
 		keyCredentials = @(
 			@{
-				#Restricts maximum lifetime of assymentric key based credentials to 730 days
+				#Restricts maximum lifetime of assymentric key based credentials to 1095 days
 				restrictionType = "asymmetricKeyLifetime"
 				maxLifetime = "P1095D"
 				restrictForAppsCreatedAfterDateTime = $Date
@@ -102,7 +102,7 @@ $params = @{
 		)
 		keyCredentials = @(
 			@{
-				#Restricts maximum lifetime of assymentric key based credentials to 730 days
+				#Restricts maximum lifetime of assymentric key based credentials to 1095 days
 				restrictionType = "asymmetricKeyLifetime"
 				maxLifetime = "P1095D"
 				restrictForAppsCreatedAfterDateTime = $Date
