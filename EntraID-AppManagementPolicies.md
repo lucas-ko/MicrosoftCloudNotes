@@ -15,6 +15,7 @@ Well, you probably did a very good job but there's an enhancement waiting.<br>
 **Conditional Access policies, regardless of how well thought out they are, in a tenant with Entra ID P1/P2 licensing without any add-ons:**
 - Don't apply to service principals.
 - Can't govern authentication methods used by application objects and service principals in the tenant.
+
 First point can be partially fixed through equipping your tenant with appropriate amount of Entra ID Workload Identities Premium licenses and applying Conditional Access policies to 1st party service principals. As of now, you can't apply Conditional Access policies to govern 3rd party service principal access - you must risk accept it.
 
 Holistic authentication strategy must also address risks related to application objects and service principals. What are some of those risks?
@@ -25,7 +26,7 @@ Tenant-level authentication method policies described below help with reduction 
 
 > ### Configuration steps
 
-Microsoft Graph PowerShell is used as Entra ID portal GUI is not yet behaving correctly (you can't configure client secrets restrictions and certificate restrictions to be active at the same time). 
+Microsoft Graph PowerShell is preffered as Entra ID portal GUI is not yet behaving correctly (you can't configure client secrets restrictions and certificate restrictions to be active at the same time). 
 Using Microsoft Graph PowerShell to configure Entra ID is always a good idea and a general best practice as well :smile:<br>
 
 Configuration proposed below enforces following tenant-wide restrictions:
