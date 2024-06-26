@@ -28,7 +28,7 @@ Back to conditional access and legacy authentication blocking - you should imple
 ![342899546-b90298e4-433e-4d9f-af0c-968b130417b0](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/0bec6de4-6ff1-4a38-8354-dd368f4c99fb)
 
 Shall you do more than this though? Absolutely! Remember, the behavior of conditional access policies is - they apply after successful authentication (see Tip #1).<br>
-**In a legacy protocol authentication scenario including attackers who are using password spray or stuffing techniques, if they're blocked by conditional access, it means they were able to successfully validate the password because policy enforcement is performed post-authentication... From IT security prevention and risk reduction perspective, it is better to block such attempts at the protocol level and simply deny credential validation attempts against Entra ID.<br>**
+**In a legacy protocol authentication scenario including attackers who are using password spray or stuffing techniques, if they're blocked by conditional access, it means they were able to successfully validate the password because policy enforcement is performed post-authentication...<br>From IT security prevention and risk reduction perspective, it is better to block such attempts at the protocol level and simply deny credential validation attempts against Entra ID.<br>**
 
 Most of the legacy authentication protocols were disabled by Microsoft in 2022 (see [this](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-deprecation-in-exchange-online-time-s-up/ba-p/3695312])), but it's always a good idea to double check your configuration and reinforce its desired state.
 
@@ -77,7 +77,7 @@ However, if you correctly define all IP address ranges of your clients[^2] and e
 1/ Define network locations (don't use countries - they don't work with CAE)<br>
 ![342677674-28753766-1cf0-42a0-8278-a5922b230707](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/9c5d91ff-692c-425d-95e6-693c5c3e937a)
 
->[!NOTE]
+>[!CAUTION]
 >Before you enable **'strictly enforce location policies'** in conditional access policy **you must ensure that all IP addresses from which your users can access Microsoft Entra ID and resource providers are included in the IP-based named locations policy**. Otherwise, you will block your users.
 
 2/ Include locations in policy configuration<br>
