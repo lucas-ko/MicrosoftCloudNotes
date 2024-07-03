@@ -9,7 +9,7 @@ It is an immutable attribute, available only during the group creation.<br> Grou
 Think about the scenario where instead of having to assign each user individually to an Entra ID administrative directory role (e.g. 'Security Administrator' and [lots of others](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference)), you designate a role-assignable group and carefully manage membership of that group.<br>
 The resultant effect is the same, user gets the directory role, however, role-assignable groups have some additional security assurances applied by default.
 
-![image](https://github.com/lucas-ko/MSGraphQueries/assets/58331927/b19f8a59-fba5-4164-9180-812ee2b52c7d)
+![345137616-b19f8a59-fba5-4164-9180-812ee2b52c7d](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/a9083bbc-85c7-455f-9727-708220c1ccaa)
 
 ## Security benefits
 What are the security assurances when directory roles are managed with role-assignable groups?
@@ -30,7 +30,7 @@ Put it differently, you implicitly delegate scope of application of your critica
 
 Using role-assignable group to control the CA policy exclusions would be more optimal, risk-wise. With such configuration, only two aforementioned critical directory roles (```Global Administrators```, ```Privileged Role Administrator```) would be in direct control of group membership and exclusion scope of your critical CA policies.
 
-![image](https://github.com/lucas-ko/MSGraphQueries/assets/58331927/c09cb278-2f05-43f5-81a7-5d5ebff98e1f)
+![344996266-c09cb278-2f05-43f5-81a7-5d5ebff98e1f](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/76269cd3-bc9f-4a0d-a327-a22414f293e7)
 
 Role-assignable groups can be used every time you worry about management scope of group membership or ownership, and you want to tighten it down. Scenarios like Microsoft Defender XDR unified RBAC role assignments, third party line of business application roles and many others.
 
