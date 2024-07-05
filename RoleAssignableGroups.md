@@ -5,6 +5,8 @@
 Role-assignable groups in Entra ID (P1 or P2 licensing required) are objects with subtle, but important difference, distinguishing them from other ordinary groups. Namely, during their creation, the ```isRoleAssignable``` attribute is set to ```True```.
 It is an immutable attribute, available only during the group creation.<br> Groups created as role-assignable stay as role-assignable for their entire lifecycle. With such attribute populated, these groups become eligible for direct assignments to Entra ID directory roles and more. 
 
+![image](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/c0c2ed06-fbd1-4ce7-be77-38c34a19bdfd)
+
 ## Primary use case
 Think about the scenario where instead of having to assign each user individually to an Entra ID administrative directory role (e.g. 'Security Administrator' and [lots of others](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference)), you designate a role-assignable group and carefully manage membership of that group.<br>
 The resultant effect is the same, user gets the directory role, however, role-assignable groups have some additional security assurances applied by default.
@@ -37,6 +39,11 @@ Role-assignable groups can be used every time you worry about management scope o
 ## Things to watch out for
 
 There is tenant-wide limit of 500 role-assignable groups. Keep that in mind and use them only if you really require additional assurances related to management of group membership/ownership.
+
+## Another option
+
+If you require even more granular control over group membership and ownership management, consider using role-assignable groups together with resticted administrative units. Check out the following cool guide by Jan Bakker - [Prevent Conditional Access bypass with Restricted Management Administrative Units in Entra ID](https://janbakker.tech/prevent-conditional-access-bypass-with-restricted-management-administrative-units-in-entra-id/).
+
 
 ---
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
