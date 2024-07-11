@@ -6,7 +6,7 @@ If you need to get information about the size of billable data ingested into giv
 //configure lookback period
 let lookback = 365d;
 Usage
-//iclude only billable data and remove current day in time filter
+//include only billable data and remove current day in time filter
 | where TimeGenerated between(ago(lookback)..now(-1d)) and IsBillable == true
 | project TimeGenerated, Quantity
 //create series representing data ingested per day (converted from MB to GB, change divisor to 1024 if you prefer binary definition of gigabyte (GiB))
