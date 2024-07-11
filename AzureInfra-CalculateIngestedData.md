@@ -4,7 +4,7 @@ If you need to get information about the size of billable data ingested into giv
 
 ```
 //configure lookback period
-let lookback = 365d;
+let lookback = 90d;
 Usage
 //include only billable data and remove current day in time filter
 | where TimeGenerated between(ago(lookback)..now(-1d)) and IsBillable == true
