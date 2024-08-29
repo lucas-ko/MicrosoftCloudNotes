@@ -26,3 +26,12 @@ It will return amount of data ingested into each Log Analytics table alongside t
 ## Helpful sources
 - [Analyze usage in a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage)
 - [KQL find operator](https://learn.microsoft.com/en-us/kusto/query/find-operator)
+
+---
+All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
