@@ -4,8 +4,9 @@ Repository dedicated to document valuable and less known features available in M
 **- Article #1** - [Entra ID - Tenant-wide application management policies](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-AppManagementPolicies.md)<br><br>
 **- Article #2** - [Entra ID - Conditional Access - tips and tricks](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/CATipsTricks.md)<br><br>
 **- Article #3** - [Entra ID - Let's discuss role assignable groups](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/RoleAssignableGroups.md)<br><br>
-**- Article #4** - [Azure Infrastructure - Log Analytics - calculate daily ingested data with moving average trendline](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-CalculateIngestedData.md)
-**- Article #5** - [Azure Infrastructure - Log Analytics - get information about data ingested per Log Analytics table and source Azure subscription]([https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-CalculateIngestedData.md](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-CalculateIngestedDataPerSubscription.md))
+**- Article #4** - [Azure Infrastructure - Log Analytics - calculate daily ingested data with moving average trendline](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-CalculateIngestedData.md)<br><br>
+**- Article #5** - [Azure Infrastructure - Log Analytics - get information about data ingested per Log Analytics table and source Azure subscription](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-CalculateIngestedDataPerSubscription.md)<br><br>
+
 ---
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
 
