@@ -98,8 +98,7 @@ How does it work? Let me describe an imaginary scenario as an example.
 >Tim, who is responsible for setting up the permissions for his team's DevOps pipeline, requests **_User Access Administrator_** to be assigned at the DevOps team subscription scope.<br>
 >Anna knows the core tenets of zero trust (**least privilege**, **assume breach** and **verify explicitly**) and decides the request must be implemented in smarter fashion.<br>
 >She decides to assign **_Role Based Access Control Administrator_** role to Tim at his team subscription scope.<br>
->Additionally, she decides the role will be constrained.<br>
->Tim will be only able to assign only roles pre-selected by Anna and add them only to specific principals.<br>
+>Anna also decides the role will be constrained - Tim will be able to assign just the roles delegated to him and assign them only to service principals.<br>
 
 Anna performs following actions in the Azure Portal:<br>
 
