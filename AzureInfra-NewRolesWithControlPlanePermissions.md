@@ -16,11 +16,11 @@ Up until now, the classic trio of control plane privileged roles with direct con
 Since then, two new roles have been added:
 
 - [Role Based Access Control Administrator](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/privileged#role-based-access-control-administrator)
-- [Reservation Administrator](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/privileged#reservations-administrator)
+- [Reservations Administrator](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/privileged#reservations-administrator)
 
-## Reservation Administrator
+## Reservations Administrator
 
-Let's dissect **_Reservation Administrator_** first.<br>
+Let's dissect **_Reservations Administrator_** first.<br>
 Is it really a control plane role? To answer this, we need to look at its definition:
 
 ```
@@ -51,10 +51,10 @@ Is it really a control plane role? To answer this, we need to look at its defini
 All right, it has _<ins>Microsoft.Authorization/roleAssignments/write</ins>_ control plane privileged action allowing assignments of any Azure RBAC role, however, to obtain the full context, one would also need to pay attention to the _<ins>assignableScopes<ins>_ property - set to _<ins>/providers/Microsoft.Capacity</ins>_.<br>That assignable scope value is odd in the context of built-in role, isn't it?<br> However, it makes sense after reviewing the documentation on [Azure Reservations](https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/view-reservations#who-can-manage-a-reservation-by-default).
 ![372595407-730fd8c9-3159-430b-ba7d-748772903439](https://github.com/user-attachments/assets/984de9e9-a428-42b2-8614-386d4e98a6aa)<br>
 
-To summarize, **_Reservation Administrator_**, even though it can mange role assignment, it can do so only on Azure Reservation objects. Technically it's still a control plane role, but greatly constrained - can't be assigned to resources and constructs other than Azure reservation objects.
+To summarize, **_Reservations Administrator_**, even though it can mange role assignment, it can do so only on Azure reservation objects. Technically it's still a control plane role, but greatly constrained - can't be assigned to resources and constructs other than reservation objects.
 
 >[!TIP]
->To assign **_Reservation Administrator_** role, activate **_User Access Administrator_** (or better **_Role Based Access Control Administrator_**)  and use following Azure CLI command: ```az role assignment create --assignee "<assignee (user or group) ObjectID>" --scope "/providers/Microsoft.Capacity" --role "a8889054-8d42-49c9-bc1c-52486c10e7cd"```.<br>
+>To assign **_Reservations Administrator_** role, activate **_User Access Administrator_** (or better **_Role Based Access Control Administrator_**)  and use following Azure CLI command: ```az role assignment create --assignee "<assignee (user or group) ObjectID>" --scope "/providers/Microsoft.Capacity" --role "a8889054-8d42-49c9-bc1c-52486c10e7cd"```.<br>
 >Reservations can then be managed in [Cost Management blade in Azure Portal](https://portal.azure.com/#view/Microsoft_Azure_CostManagement/Menu/~/reservations).
 
 ## Role Based Access Control Administrator
