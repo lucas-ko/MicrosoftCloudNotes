@@ -6,6 +6,7 @@ Repository dedicated to document valuable and less known features available in M
 **- Article #3** - [Entra ID - Let's discuss role assignable groups](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/RoleAssignableGroups.md)<br><br>
 **- Article #4** - [Azure Infrastructure - Log Analytics - calculate daily ingested data with moving average trendline](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-CalculateIngestedData.md)<br><br>
 **- Article #5** - [Azure Infrastructure - Log Analytics - get information about data ingested per Log Analytics table and source Azure subscription](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-CalculateIngestedDataPerSubscription.md)<br><br>
+**- Article #6** - [Azure Infrastructure - RBAC model - new roles with control plane permissions](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-NewRolesWithControlPlanePermissions.md)<br><br>
 
 ---
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
