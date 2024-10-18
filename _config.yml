@@ -1,3 +1,14 @@
-theme: jekyll-theme-minimal
-title: Lukasz's homepage
-description: Blog dedicated to document valuable features available in Microsoft Cloud ecosystem. 
+title: "Adventures in Cloudland"
+author:
+  name: Lukasz Kozubal
+  
+remote_theme: jekyll/minima
+plugins:
+  - jemoji  
+  - jekyll-sitemap  
+
+minima:
+  skin: auto
+  social_links: 
+    - { platform: linkedin,  user_url: "https://www.linkedin.com/in/lkozubal" }
+    - { platform: github,  user_url: "https://github.com/lucas-ko" }
