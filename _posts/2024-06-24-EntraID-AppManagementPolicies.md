@@ -9,8 +9,8 @@ categories: misc
 Following guide concisely describes the steps required to configure tenant-wide application authentication methods policy in Entra ID directory.<br>
 Application authentication methods policy allows for enhanced governance, management and control over application and service principal credentials in Entra ID tenant.<br>
 
->[!NOTE]
->You'll find more information in the MS Learn documentation [here](https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy) and [here](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-app-management-policy).
+[!NOTE]
+You'll find more information in the MS Learn documentation [here](https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy) and [here](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-app-management-policy).
 
 > ### Why proper governance over authentication methods for applications and service principals is important?
 You say you have very comprehensive, field-tested Conditional Access policies?<br> Multi-factor authentication and compliant devices mandated for everyone, phishing resistant factors required for critical privileged roles, legacy authentication blocked, user and risk level policies configured, authentication transfer and device code flow blocked for 99% of user base...<br>
