@@ -7,6 +7,9 @@ plugins:
   - jemoji  
   - jekyll-sitemap  
 
+header_pages:
+  - Index.md
+
 minima:
   skin: auto
   social_links: 
