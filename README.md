@@ -1,4 +1,3 @@
-# MicrosoftCloudNotes
 Repository dedicated to document valuable and less known features available in Microsoft Cloud ecosystem.
 
 **- Article #1** - [Entra ID - Tenant-wide application management policies](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-AppManagementPolicies.md)<br><br>
