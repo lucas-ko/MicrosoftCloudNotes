@@ -17,4 +17,4 @@ minima:
     - { platform: github,  user_url: "https://github.com/lucas-ko" }
 
 
-exclude: ["CNAME", "LICENSE", "RoleAssignableGroups.md", "EntraID-AppManagementPolicies.md", "CATipsTricks.md", "AzureInfra-NewRolesWithControlPlanePermissions.md","AzureInfra-CalculateIngestedDataPerSubscription.md","AzureInfra-CalculateIngestedData.md", "README.md"]
+exclude: ["CNAME", "LICENSE", "RoleAssignableGroups.md", "EntraID-AppManagementPolicies.md", "CATipsTricks.md", "AzureInfra-NewRolesWithControlPlanePermissions.md","AzureInfra-CalculateIngestedDataPerSubscription.md","AzureInfra-CalculateIngestedData.md"]
