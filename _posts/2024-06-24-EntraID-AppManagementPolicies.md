@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft Entra ID - the mysteries of application authentication methods policies"
-categories: misc
+categories: Entra ID, IDaaS, Cloud Security, Cloud Governance, Operational Excellence
 ---
 
 > ### Entra ID - application authentication methods policy - intro
