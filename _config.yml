@@ -4,11 +4,10 @@ author:
   
 remote_theme: jekyll/minima
 plugins:
-  - jemoji  
-  - jekyll-sitemap  
+  - jemoji
+  - jekyll-feed
+  - jekyll-sitemap
 
-header_pages:
-  - Index.md
 
 minima:
   skin: auto
