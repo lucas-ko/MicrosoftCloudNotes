@@ -11,7 +11,25 @@ It is an immutable attribute, available only during the group creation.<br> Grou
 Think about the scenario where instead of having to assign each user individually to an Entra ID administrative directory role (e.g. 'Security Administrator' and [lots of others](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference)), you designate a role-assignable group and carefully manage membership of that group.<br>
 The resultant effect is the same, user gets the directory role, however, role-assignable groups have some additional security assurances applied by default.
 
-![345137616-b19f8a59-fba5-4164-9180-812ee2b52c7d](https://github.com/lucas-ko/MicrosoftCloudNotes/assets/58331927/a9083bbc-85c7-455f-9727-708220c1ccaa)
+```mermaid
+flowchart LR
+    id1[**Before role-assignable groups. Each identity had to be assigned to a role individually. Not scalable!**]
+    Identity1["User identity1"]
+    Identity2["User identity2"]
+    Identity3["User identity3"]
+    EntraIDRoles["EntraIDRole"]
+    Identity1 --Directory role assignment-->EntraIDRoles
+    Identity2 --Directory role assignment-->EntraIDRoles
+    Identity3 --Directory role assignment-->EntraIDRoles
+```
+
+```mermaid
+flowchart LR
+    id1[**With role-assignable groups. One assignment per group! Better scalability!**]
+    Group1["Security or M365 role-assignable group"]
+    EntraIDRoles["EntraIDRole"]
+    Group1 --Directory role assignment-->EntraIDRoles
+```
 
 ## Security benefits
 What are the security assurances when directory roles are managed with role-assignable groups?
