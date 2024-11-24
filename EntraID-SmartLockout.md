@@ -1,7 +1,9 @@
-## Entra ID - smart lockout - protect your users from malicious account lockouts!
+## Entra ID - smart lockout - protects your users from malicious account lockouts!
 I recently had several conversations related to smart lockout feature in Entra ID.  Based on those, it occurred to me that inner workings of this feature are not as widely know as I assumed.<br>
 
-**TL;DR -  Smart lockout is a capability of Entra ID that makes a given user account appear locked out for certain entities, while allowing legitimate users to successfully authenticate.**
+## **TL;DR<br>**
+Smart lockout is a capability of Entra ID that makes a given user account appear locked out for certain entities, while allowing legitimate users to successfully authenticate.<br>
+By slowing down an attacker, it raises the cost of successful brute force attack on primary authentication factor (it's unfortunately still a password in majority of the cases).
 
 ## How does Entra ID realize this?
 
