@@ -8,6 +8,8 @@ Repository dedicated to document valuable and less known features available in M
 **- Article #6** - [Azure Infrastructure - RBAC model - new roles with control plane permissions](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-NewRolesWithControlPlanePermissions.md)<br><br>
 **- Article #7** - [Entra ID - smart lockout - protect your users from malicious account lockouts!](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-SmartLockout.md)<br><br>
 
+## <p align=center> Visit https://blog.identitylab.ch for better reading experience!</p>
+
 ---
 All work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
 
