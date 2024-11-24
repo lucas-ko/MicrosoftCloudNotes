@@ -14,6 +14,42 @@ The secret lies in clever management of account metadata responsible for lockout
 
 <sup>* \- the period of observation is not disclosed but it is fair to assume 30-90 days</sup>
 
+```mermaid
+flowchart LR
+    Start@{ shape: circle, label: "Authentication attempt" }
+    Is_IPFamiliar@{ shape: diamond, label: "Is source IP in familiar location?" }
+    Fam_Is_AccountLocked@{ shape: diamond, label: "Is account locked for auth. attempts from familiar locations?" }
+    Unfam_Is_AccountLocked@{ shape: diamond, label: "Is account locked for auth. attempts from unknown locations?" }
+    Fam_Deny@{ shape: rounded, label: "Deny authentication" }
+    Unfam_Deny@{ shape: rounded, label: "Deny authentication" }
+    Unfam_CredsOK@{ shape: diamond, label: "Are credentials valid?" }
+    Fam_CredsOK@{ shape: diamond, label: "Are credentials valid?" }
+    Fam_AllowAuth@{ shape: rounded, label: "Accept authentication" }
+    Unfam_AllowAuth@{ shape: rounded, label: "Accept authentication" }
+    Fam_AddIP@{ shape: rounded, label: "Add source IP to familiar locations" }
+    Unfam_AddIP@{ shape: rounded, label: "Add source IP to familiar locations" }
+    Fam_IncrementCounter@{ shape: rounded, label: "Increment bad auth. attempt counter for familiar locations" }
+    Unfam_IncrementCounter@{ shape: rounded, label: "Increment bad auth. attempt counter for unknown locations" }
+    Unfam_Is_Suspicious@{ shape: diamond, label: "Is activity suspicious - matches known attack patterns?" }
+Start --> Is_IPFamiliar
+Is_IPFamiliar-->|Yes|Fam_Is_AccountLocked
+Is_IPFamiliar-->|No|Unfam_Is_AccountLocked
+Fam_Is_AccountLocked-->|Yes|Fam_Deny
+Fam_Is_AccountLocked-->|No|Fam_CredsOK
+Fam_CredsOK-->|No|Fam_Deny
+Fam_CredsOK-->|Yes|Fam_AllowAuth
+Fam_AllowAuth-->Fam_AddIP
+Fam_Deny-->Fam_IncrementCounter
+Unfam_Is_AccountLocked-->|Yes|Unfam_Deny
+Unfam_Is_AccountLocked-->|No|Unfam_Is_Suspicious
+Unfam_Is_Suspicious-->|Yes|Unfam_Deny
+Unfam_Is_Suspicious-->|No|Unfam_CredsOK
+Unfam_CredsOK-->|No|Unfam_Deny
+Unfam_CredsOK-->|Yes|Unfam_AllowAuth
+Unfam_AllowAuth-->Unfam_AddIP
+Unfam_Deny-->Unfam_IncrementCounter
+```
+
 Smart lockout is enabled for every Entra ID customer but it's not configurable for free tenants.
 For tenants licensed with Premium P1 or P2, some configuration capabilities become available:
 Lockout threshold - Maximum number of bad authentication attempts over which the account is locked out. If the first sign-in after a lockout also fails, the account locks out again. 
