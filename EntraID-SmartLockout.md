@@ -1,5 +1,5 @@
 ## Entra ID - smart lockout - protects your users from malicious account lockouts!
-I recently had several conversations related to smart lockout feature in Entra ID.  Based on those, it occurred to me that inner workings of this feature are not as widely know as I assumed.<br>
+I recently had several conversations related to smart lockout feature in Entra ID.  Based on those, it occurred to me that inner workings of this feature are not as widely known as I assumed.<br>
 
 ## **TL;DR<br>**
 Smart lockout is a capability of Entra ID that makes a given user account appear locked out for certain entities, while allowing legitimate users to successfully authenticate.<br>
@@ -9,8 +9,8 @@ By slowing down an attacker, it raises the cost of successful brute force attack
 
 The secret lies in clever management of account metadata responsible for lockout: 
 - each Entra ID user account has two separate lockout counters;
-- each lockout counter is assigned to a specific location - either "unfamiliar" or "familiar" one;
-- "familiar" location keeps track of IP address ranges from which user has successfully authenticated in the past<sup>*</sup>, everything else is "unfamiliar".
+- each lockout counter is assigned to a specific location - either "unknown" or "familiar" one;
+- "familiar" location keeps track of IP address ranges from which user has successfully authenticated in the past<sup>*</sup>, everything else is "unknown".
 
 <sup>* \- the period of observation is not disclosed but it is fair to assume 30-90 days</sup>
 
@@ -52,8 +52,10 @@ Unfam_Deny-->Unfam_IncrementCounter
 
 Smart lockout is enabled for every Entra ID customer but it's not configurable for free tenants.
 For tenants licensed with Premium P1 or P2, some configuration capabilities become available:
-Lockout threshold - Maximum number of bad authentication attempts over which the account is locked out. If the first sign-in after a lockout also fails, the account locks out again. 
-Lockout duration - Minimum lockout duration in seconds (during initial lockout). Subsequent lockouts are increasingly longer.
+
+**Lockout threshold** - Maximum number of bad authentication attempts over which the account is locked out. If the first sign-in after a lockout also fails, the account locks out again. 
+
+**Lockout duration** - Minimum lockout duration in seconds (during initial lockout). Subsequent lockouts are increasingly longer.
 
 ![image](https://github.com/user-attachments/assets/dcea6684-228c-4fed-824d-1ba727997ba0)
 
@@ -62,7 +64,7 @@ You might say, _"That's cool, but what actually happens if I am hybrid and use p
 Great question! Let's consider two scenarios:
 
 **Scenario 1:<br>**
-- Attacker tries to brute force user password from location that is unfamiliar for the user, lockout counter exceeds the limit.
+- Attacker tries to brute force user password from location that is unknown for the user, lockout counter exceeds the limit.
 
 **Result:<br>**
 - Attacker is locked out. User authenticating from familiar location can authenticate successfully to all services relying on Entra ID, as well as to on-premises workloads.
@@ -72,7 +74,7 @@ Great question! Let's consider two scenarios:
 
 **Result:<br>**
 - Both attacker and legitimate user are locked out. During the lockout, user cannot successfully authenticate to all services relying on Entra ID (e.g., Microsoft 365, Azure Resource Manager, 3rd party integrated SaaS apps). 
-Because affected user's lockout status is not replicated to on-premises Active Directory, they can still successfully authenticate to all on-prem workloads relying on AD.
+Because affected user's lockout status is not replicated to on-premises Active Directory, they can still successfully authenticate to all on-prem workloads relying on Active Directory.
 
 **What about passwordless users? Are their account susceptible to brute force attempts and malicious lockouts?**<br>
 Unfortunately yes, as currently you can't create an user object without specyfing its password, below creation attempt via _New-MGBetaUser_ proves that.<br>
@@ -80,7 +82,7 @@ Unfortunately yes, as currently you can't create an user object without specyfin
 ![image](https://github.com/user-attachments/assets/644a33b7-a658-4729-9596-58a602d71b43)
 
 >[!NOTE]
->If you are using pass-through-authentication or ADFS (you really need that PHS project going!), above scenarios become a bit more complex as they involve real-time password verification on-premises. To avoid unnecessary account lockout, you should set lockout threshold in Entra ID to be lower that on-premises domain.
+>If you are using pass-through-authentication or ADFS (you really need that PHS project going!), above scenarios become a bit more complex as they involve real-time password verification on-premises. To avoid unnecessary account lockout, you should set lockout threshold in Entra ID to be lower than for on-premises domain.
 
 >[!TIP]
 >Microsoft Entra ID also protects against attacks by analyzing more signals during each authentication attempt. Assessed data includes source IP reputation and associated malicious activity.
