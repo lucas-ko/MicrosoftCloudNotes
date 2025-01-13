@@ -7,6 +7,7 @@ Repository dedicated to document valuable and less known features available in M
 **- Article #5** - [Azure Infrastructure - Log Analytics - get information about data ingested per Log Analytics table and source Azure subscription](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-CalculateIngestedDataPerSubscription.md)<br><br>
 **- Article #6** - [Azure Infrastructure - RBAC model - new roles with control plane permissions](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/AzureInfra-NewRolesWithControlPlanePermissions.md)<br><br>
 **- Article #7** - [Entra ID - smart lockout - protect your users from malicious account lockouts!](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-SmartLockout.md)<br><br>
+**- Article #7** - [Entra ID - Workload Identity Federation - great feature with some risks!](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-WorkloadIdentityFederation.md)<br><br>
 
 ## <p align=center> Visit https://blog.identitylab.ch for better reading experience!</p>
 
