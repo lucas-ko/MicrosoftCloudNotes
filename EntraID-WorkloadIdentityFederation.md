@@ -108,7 +108,7 @@ Did you notice that whoever controls external identity provider, whether with ma
 **How to assess it**:<br> 
 Gauge the processes and technical controls applied to the external identity provider you are about to depend on.
 Ask the following questions:
-- What type of platform does the IdP run on? Is it self-hosted on-prem, self-managed IaaS, bespoke PaaS or cloud SaaS? Each platform bears different responsibilities for the teams accountable for its management.
+- What type of platform does the IdP run on? Is it self-hosted on-prem, self-managed IaaS, bespoke app code deployed in PaaS or cloud SaaS? Each platform bears different responsibilities for the teams accountable for its management.
 - Who is accountable for management? Is it internal team responsible for managing Entra ID, different team inside your organization or is the accountability transferred to an external provider? Assess operational processes used manage the platform.
 - What are the technical security controls applied to reduce the chances of misconfiguration. Do these controls follow an established security framework/benchmark or vendor best practices?
 
@@ -138,8 +138,8 @@ To get the idea about the probability of this risk materializing, assess the cur
 - Implement Azure Policies to apply governance to federated identity token issuers (applicable only for user-assigned managed identities in Azure infrastructure context). Example policies [here](https://www.azadvertizer.net/azpolicyadvertizer/2571b7c3-3056-4a61-b00a-9bc5232234f5.html), [here](https://www.azadvertizer.net/azpolicyadvertizer/fd1a8e20-2c4f-4a6c-9354-b58d786d9a1f.html) and [here](https://www.azadvertizer.net/azpolicyadvertizer/ae62c456-33de-4dc8-b100-7ce9028a7d99.html).
 - Azure Policies can also block the use of workload identity federation at a designated scope (again, only for user-assigned managed identities in Azure infrastructure context). Details [here](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-block-using-azure-policy).
 - Minimize permanent assignments (use smart role elevation policies!) to the following Entra ID roles: Global Admin (that was obvious :)), Application Admin, Cloud Application Admin, Application Developer, any custom role with modify permissions iver application registrations and service principals. Do not assign any owners on app registration objects. Make sure that _Application.ReadWrite.All_ application permission is not assigned to any service principals/managed identities.
-- Have robust detection and alerting capabilities
-  - Query to detect additions of federated identity credentials in application objects
+- Have robust detection and alerting capabilities.
+  - Query to detect additions of federated identity credentials in application objects:
 ```
 //set lookback period below
 let lookback = 30d;
@@ -157,7 +157,7 @@ AuditLogs
     ConfigurationDetails = tostring(TargetResources.modifiedProperties[0].newValue)
 | mv-expand todynamic(ConfigurationDetails)
 ```
-  - Query to detect modification of federated identity configuration on user-assigned managed identities
+  - Query to detect modification of federated identity configuration on user-assigned managed identities:
 ```
 //set lookback period below
 let lookback = 30d;
@@ -188,6 +188,7 @@ This is a general risk which applies in most of the environments and identity ty
 - Greater that necessary impact to data assets in case of materialization of risks #2 and #3.
 
 ### Useful external resources:
+
 - [Access cloud resources across Azure tenants without using secrets (Microsoft Entra Identity Platform Blog)](https://devblogs.microsoft.com/identity/access-cloud-resources-across-tenants-without-secrets/)
 - [Workload Identity Federation (Microsoft Learn)](https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation)
 - [Identify and prevent abuse of Managed Identities with Federated Credentials from unauthorized entities (Thomas Naunheim)](https://www.cloud-architekt.net/identify-prevent-abuse-uami-fedcreds/)
