@@ -40,7 +40,8 @@ Connect-MgGraph
 Invoke-MgBetaInvalidateAllUserRefreshToken -UserId <UserPrincipalName or object ID>
 ```
 
-ClickOps (GUI) way:
+ClickOps (GUI) way:<br>
+
 ![RevokeSessions](https://github.com/user-attachments/assets/22f26806-ea13-4d1f-a734-003830bfc64e)
 
 
