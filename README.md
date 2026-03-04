@@ -9,7 +9,7 @@ Repository dedicated to document valuable and less known features available in M
 **- Article #7** - [Entra ID - smart lockout - protect your users from malicious account lockouts!](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-SmartLockout.md)<br><br>
 **- Article #8** - [Entra ID - Workload Identity Federation - great feature with some risks!](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-WorkloadIdentityFederation.md)<br><br>
 **- Article #9** - [Entra ID - tokens and cookies - a different perspective.](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-Tokens-ADifferentLook.md)<br><br>
-
+**- Article #10** - [Entra ID - protecting security information registration - how to balance usability and risks?](https://github.com/lucas-ko/MicrosoftCloudNotes/blob/main/EntraID-Harden-SecurityInfoRegistration.md)<br><br>
 
 ## <p align=center> Visit https://blog.identitylab.ch for better reading experience!</p>
 
